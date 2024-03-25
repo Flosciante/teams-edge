@@ -1,5 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxthub/core'],
-  devtools: { enabled: true }
+
+  modules: [
+    '@nuxt/fonts',
+    '@nuxt/ui',
+    '@vueuse/nuxt',
+    'nuxt-auth-utils',
+    '@nuxtjs/color-mode',
+  ],
+
+  devtools: { enabled: true },
 })

@@ -1,10 +1,15 @@
 export default eventHandler(async () => {
   const db = hubDatabase()
 
-  // TODO: move it a a Server Task
-  await db.exec('CREATE TABLE IF NOT EXISTS messages (id INTEGER PRIMARY KEY, text TEXT, created_at INTEGER)')
+  await db.batch([
+    db.prepare('INSERT INTO locations (name) VALUES ("France", "UK")'),
+    db.prepare('INSERT INTO Departments (name) VALUES ("Software Engineering", "Product Manager", "Information Technology (IT)")')
+  ])
 
-  const { results } = await db.prepare('SELECT * FROM messages ORDER BY created_at DESC').all()
+  const [departments, locations] = await db.batch([
+    db.prepare('SELECT name FROM departments)'),
+    db.prepare('SELECT name FROM locations)')
+  ])
 
-  return results
+  return [departments, locations]
 })

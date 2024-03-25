@@ -1,7 +1,9 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
-  <main>
-    <ImageGallery />
-    <RedirectsPanel />
-    <MessagesPanel />
-  </main>
+  <NuxtLayout>
+    test
+  </NuxtLayout>
 </template>
