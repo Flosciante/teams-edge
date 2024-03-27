@@ -1,7 +1,8 @@
 import { drizzle } from 'drizzle-orm/d1'
-export { sql, eq, and, or } from 'drizzle-orm'
 
 import * as schema from '../database/schema'
+
+export { sql, eq, and, or } from 'drizzle-orm'
 
 export const tables = schema
 
@@ -10,5 +11,5 @@ export function useDB() {
 }
 
 export type Employees = typeof schema.employees.$inferSelect
-export type Location = typeof schema.locations.$inferSelect
-export type departments = typeof schema.departments.$inferSelect
+export type Locations = typeof schema.locations.$inferSelect
+export type Departments = typeof schema.departments.$inferSelect
